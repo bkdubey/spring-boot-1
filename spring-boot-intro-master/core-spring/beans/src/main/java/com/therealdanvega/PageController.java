@@ -8,17 +8,32 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class PageController {
 
-    // notificationService
-    private NotificationService notificationService;
+    // using property based injection
+    /*@Autowired
+    private NotificationService notificationService;*/
 
+
+    //using setter injection
+    /*@Autowired
+    public void setNotificationService(NotificationService notificationService) {
+        this.notificationService = notificationService;
+    }*/
+
+    //using constructor injection
     @Autowired
     public PageController(NotificationService notificationService) {
         this.notificationService = notificationService;
     }
 
+    private NotificationService notificationService;
+
     @RequestMapping("/")
     public String home(){
-        return notificationService.toString();
+        return "welcome to default";
     }
 
+    @RequestMapping("/custom")
+    public String home_custom(){
+        return notificationService.toString();
+    }
 }
