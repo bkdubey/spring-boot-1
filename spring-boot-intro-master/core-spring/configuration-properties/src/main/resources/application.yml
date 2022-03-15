@@ -4,3 +4,4 @@ myconfig:
   admin-first-name: Dan
   admin-last-name: Vega
   adminEmail: danvega@gmail.com
+  adminEMail: this props wont be supported , as it's not defined in pojo , if we match name . difference is captial M in this props
